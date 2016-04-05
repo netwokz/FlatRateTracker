@@ -19,10 +19,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(android.R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
-        btnTicket = (Button) findViewById(android.R.id.btn_add_ticket);
-        btnData = (Button) findViewById(android.R.id.btn_view_database);
+        btnTicket = (Button) findViewById(R.id.btn_add_ticket);
+        btnData = (Button) findViewById(R.id.btn_view_database);
         btnTicket.setOnClickListener(this);
         btnData.setOnClickListener(this);
 
@@ -43,18 +43,18 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(android.R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case android.R.id.btn_add_ticket:
+            case R.id.btn_add_ticket:
                 AddTicketDialog mNewTicket = AddTicketDialog.newInstance();
-                mNewTicket.show(getSupportFragmentManager(), "new-ticket-dialog");
+                mNewTicket.show(getFragmentManager(), "new-ticket-dialog");
                 break;
-            case android.R.id.btn_view_database:
+            case R.id.btn_view_database:
                 Intent intent = new Intent("com.netwokz.flatratetracker.CALENDAR_VIEW");
                 startActivity(intent);
                 break;

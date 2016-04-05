@@ -1,8 +1,10 @@
 package com.netwokz.flatratetracker;
 
-import android.app.Activity;
-import android.app.FragmentTransaction;
+
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
+
 
 import com.netwokz.flatratetracker.calendarview.CaldroidFragment;
 
@@ -11,7 +13,7 @@ import java.util.Calendar;
 /**
  * Created by Steve on 10/24/13.
  */
-public class MyCalendarView extends Activity {
+public class MyCalendarView extends FragmentActivity {
 
     CaldroidFragment calFragment;
 
@@ -23,7 +25,7 @@ public class MyCalendarView extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(android.R.layout.calendar_fragment);
+        setContentView(R.layout.calendar_fragment);
 
         calFragment = new CaldroidFragment();
         Bundle args = new Bundle();
@@ -32,8 +34,8 @@ public class MyCalendarView extends Activity {
         args.putInt(CaldroidFragment.YEAR, cal.get(Calendar.YEAR));
         calFragment.setArguments(args);
 
-        FragmentTransaction t = getFragmentManager().beginTransaction();
-        t.replace(android.R.id.cal_view, calFragment);
+        FragmentTransaction t = getSupportFragmentManager().beginTransaction();
+        t.replace(R.id.cal_view, calFragment);
         t.commit();
     }
 
