@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:orientation="vertical"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".MainActivity">
+
+    <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="2">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|right"
+                android:paddingRight="10dp"
+                android:id="@+id/ticket_id_label"
+                android:text="@string/ticket_id"
+                android:layout_weight="1"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/ticket_id_value"
+                android:inputType="number"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="3">
+
+        <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:prompt="@string/year"
+                android:spinnerMode="dialog"
+                android:id="@+id/sp_year"/>
+
+        <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:prompt="@string/make"
+                android:spinnerMode="dialog"
+                android:id="@+id/sp_make"/>
+
+        <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:prompt="@string/model"
+                android:spinnerMode="dialog"
+                android:id="@+id/sp_model"/>
+
+    </TableRow>
+
+    <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="4">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical|right"
+                android:paddingRight="10dp"
+                android:text="@string/total_hours"
+                android:layout_weight="2"/>
+
+        <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/hours_first"
+                android:id="@+id/sp_hour"/>
+
+        <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/hours_second"
+                android:id="@+id/sp_minute"/>
+    </TableRow>
+
+    <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:weightSum="2">
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel"
+                android:layout_gravity="center"
+                style="?android:attr/buttonBarButtonStyle"
+                android:textSize="20sp"
+                android:layout_weight="1"
+                android:id="@+id/btn_cancel"/>
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ok"
+                android:layout_gravity="center"
+                style="?android:attr/buttonBarButtonStyle"
+                android:textSize="20sp"
+                android:layout_weight="1"
+                android:id="@+id/btn_ok"/>
+    </TableRow>
+
+</TableLayout>
